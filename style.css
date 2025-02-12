@@ -72,12 +72,12 @@ padding:10px 20px;
 @keyframes fall{
   0%{
     top:-150px;
-    opacity: 0.4;
+    opacity: 1;
     
   }
   100%{
     top:100vh;
-    opacity :.9;
+    opacity:0.2;
   }
   
 }
