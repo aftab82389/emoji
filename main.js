@@ -1,18 +1,39 @@
-const buttons=document.querySelector('.buttons');
-function surprise(){
-    const surprise=document.querySelector('.surprise');
-    surprise.style.display="none";
-    buttons.style.display="flex";
+const sur_btn = document.querySelector('.button');
+const surprise = document.querySelector('.surprise');
+
+function Surprise() {
+  surprise.style.display = "block";
+  sur_btn.style.display = "none";
 }
-function move(){
-    const no=document.querySelector('#no');
-    x=Math.random()*0.8*window.innerWidth;
-    y=Math.random()*0.8*window.innerHeight;
-    no.style.left=x+'px';
-    no.style.top=y+'px';
+sur_btn.addEventListener('click', () => {
+  Surprise();
+  heartfalling();
+})
+const yes = document.querySelector('.yes');
+const no = document.querySelector('.no');
+const response_text = document.querySelector('.responsetext');
+yes.addEventListener('click', () => {
+  response_text.innerHTML = 'Yah!,I love you too!😘';
+  surprise.style.display = "none";
+})
+
+function move() {
+  x = window.innerWidth * Math.random() * 0.8;
+  y = window.innerHeight * Math.random() * 0.8
+  no.style.position = 'absolute';
+  no.style.left = x + 'px';
+  no.style.top = y + 'px';
+  console.log(Math.random() * 470)
 }
-function responsetext(){
-    const responce_text=document.querySelector('.responce_text');
-    responce_text.innerHTML="Yah! I Know";
-    buttons.style.display="none";
+
+function heartfalling() {
+
+  for (let i = 1; i < 55; i++) {
+    let heart = document.createElement('div');
+    heart.innerHTML = "❤️";
+    heart.className = "heart_falling"
+    heart.style.left = (Math.random() * window.innerWidth * .95) + 'px';
+    heart.style.animationDuration=Math.random()*6+6 +'s';
+    document.body.appendChild(heart);
+  }
 }
