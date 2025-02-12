@@ -15,12 +15,12 @@ body {
   flex-flow: column;
   gap:25px;
   align-items: center;
-  background: #FFF3F3;
+  background: #0F0F0F;
   padding-top: 40px;
 }
 .main h1{
   text-align: center;
-  font-size: 31px;
+  font-size: 30px;
   color:#FF64BD;
   text-transform: capitalize
 }
